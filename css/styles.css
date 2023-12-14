@@ -167,7 +167,19 @@ img {
     letter-spacing: 0.28px;
 }
 
+.nav-title.current::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-cl);
+}
+
 .nav-title {
+    position: relative;
+    display: block;
     padding-top: 32px;
     padding-bottom: 32px;
     color: var(--accent-cl);
@@ -293,8 +305,50 @@ img {
     background-color: var();
 }
 
+/* ==========================
+======Модальне вікно======
+============================*/
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.modal-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 528px;
+    height: 581px;
+    border-radius: 4px;
+    background-color: #FFF;
+    box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+        0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.modal-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+
 /* ======================
-==  section Feature 
+==  section Feature  Особливості
 ========================*/
 .feature {
     background-color: var(--main-bg-cl);
@@ -322,7 +376,7 @@ img {
     margin-right: 0;
 }
 
-.feature-icon-link {
+.feature-rectangle {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -333,9 +387,10 @@ img {
     margin-bottom: 30px;
 }
 
-.feature-icon-link:hover,
-.feature-icon-link:focus {
-    border-color: var(--accent-cl);
+.feature-rectangle:hover,
+.feature-rectangle:focus {
+    border-radius: 4px;
+    background-color: var(--secondary-bg-cl);
 }
 
 .feature-list {
@@ -376,7 +431,7 @@ img {
 }
 
 /* =======================
-==section Services      
+==section Services     Чим ми займаємося 
 ========================== */
 .services {
     background-color: var(--main-bg-cl);
@@ -402,10 +457,41 @@ img {
 }
 
 .item-services {
+    display: flex;
+    align-items: center;
+    position: relative;
     margin-right: 30px;
     width: 370px;
     height: 294px;
     flex-shrink: 0;
+}
+
+.item-services::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(47, 48, 58, 0.80);
+}
+
+.services-desk {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--main-bg-cl);
+    text-align: center;
+    font-family: var(--main-font);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.42px;
+    text-transform: uppercase;
 }
 
 .item-services:last-child {
@@ -413,7 +499,7 @@ img {
 }
 
 /* ========================
-==section Our team      
+==section Our team   Наша команда   
 ========================= */
 .team {
     background-color: var(--secondary-bg-cl);
@@ -596,6 +682,7 @@ img {
     align-items: center;
     flex-wrap: wrap;
 }
+
 .blok-link {
     display: block;
 }
@@ -642,7 +729,7 @@ img {
 }
 
 /*  ===================
-|====section Clients
+|====section Clients  Постійні клієнти
 ====================== */
 .clients {
     background-color: #FFF;
@@ -800,7 +887,7 @@ img {
     justify-content: center;
     width: 44px;
     height: 44px;
-    background-color: rgba(255, 255, 255, 0.10); 
+    background-color: rgba(255, 255, 255, 0.10);
     border-radius: 50%;
     fill: #FFFFFF
 }

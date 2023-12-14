@@ -32,7 +32,7 @@
           >
           <ul class="navigation-list">
             <li class="navigation-item">
-              <a class="link nav-title" href="#studio">Студія</a>
+              <a class="link nav-title current" href="#studio">Студія</a>
             </li>
             <li class="navigation-item">
               <a class="link nav-link" href="./portfolio.html">Портфоліо</a>
@@ -71,10 +71,24 @@
       <section class="hero section overlay">
         <div class="container hero-container">
           <h1 class="title">Ефективні рішення для вашого бізнесу</h1>
-          <button class="btn" type="button">Замовити послугу</button>
+          <button class="btn" type="button" data-modal-open>
+            Замовити послугу
+          </button>
+          <div class="backdrop is-hidden" data-modal>
+            <div class="modal-wrapper">
+              <button class="modal-btn" data-modal-close>
+                <svg class="modal-icon" width="30" height="30">
+                  <use
+                    href="./images/sprite.svg#icon-close-black-18dp-2-1-1"
+                  ></use>
+                </svg>
+              </button>
+              <form class="modol-form"></form>
+            </div>
+          </div>
         </div>
       </section>
-      <!-- section Feature -->
+      <!-- section Feature  Особливості-->
       <section class="feature section container">
         <div class="feature-container">
           <!-- Лoгічний заголовок -->
@@ -130,7 +144,7 @@
           </ul>
         </div>
       </section>
-      <!-- section Services -->
+      <!-- section Services Чим ми займаємося -->
       <section class="services section">
         <div class="container services-container">
           <h2 class="title-services">Чим ми займаємося</h2>
@@ -142,6 +156,7 @@
                 width="370"
                 height="294"
               />
+              <p class="services-desk">Десктопні додатки</p>
             </li>
             <li class="item-services">
               <img
@@ -150,6 +165,7 @@
                 width="370"
                 height="294"
               />
+              <p class="services-desk">Мобільні додатки</p>
             </li>
             <li class="item-services">
               <img
@@ -158,11 +174,12 @@
                 width="370"
                 height="294"
               />
+              <p class="services-desk">Дизайнерські рішення</p>
             </li>
           </ul>
         </div>
       </section>
-      <!-- section Our team -->
+      <!-- section Our team Наша команда-->
       <section class="team section">
         <div class="container team-container">
           <h2 class="title-team">Наша команда</h2>
@@ -418,7 +435,7 @@
           </ul>
         </div>
       </section>
-      <!-- section Clients -->
+      <!-- section Clients  Постійні клієнти-->
       <section class="clients section">
         <div class="container clients-container">
           <h2 class="clients-title">Постійні клієнти</h2>
@@ -550,5 +567,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
