@@ -936,11 +936,6 @@ img {
 }
 .backdrop.is-hidden .modal-wrapper {
     transform: translate(-50%, -50%) scale(.4);
-    opacity: 0;
-}
-.backdrop .modal-wrapper {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
 }
 
 .modal-wrapper {
@@ -948,7 +943,7 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
-    transition: transform 300ms ease-in-out 200ms, opacity 300ms ease-in-out 200ms ;
+    transition: transform 250ms var(--timing-function);
     width: 528px;
     height: 581px;
     border-radius: 4px;
